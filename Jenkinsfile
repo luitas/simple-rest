@@ -12,7 +12,7 @@ node {
     }
     
     stage('Push image') {
-        docker.withRegistry('http://193.219.91.103:8081/repository/docker-private/', 'nexus') {
+        docker.withRegistry('http://193.219.91.103:8081/repository/docker-private/') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
